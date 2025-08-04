@@ -8,8 +8,3 @@ The game interacts with the player using terminal prompts and subtle 4th-wall br
 - Creepy responses that feel... aware
 - Creates a mysterious notepad file on your desktop
 - Minimal but immersive experience
-
-## Getting Started
-Run:
-```bash
-python main.py
