@@ -1,6 +1,7 @@
 import time
 from datetime import datetime
 import os
+import getpass
 
 desktop_path = os.path.join(os.path.expanduser("~"), "OneDrive", "Desktop")
 install_folder = "IKnowYou"
@@ -30,24 +31,36 @@ elif choice == "no":
 else:
     print("\nI didn't catch that, so auto installing...")
 
-print(f"Attempting to create folder at: {folder_path}")
+print(f"Attempting to create folder at...")
 
 
 if not os.path.exists(folder_path):
     os.makedirs(folder_path)
-    print("Attempting to create a new folder on your Desktop...")
+    print("Folder created.")
 else:
     print("\nThat folder is already on your Desktop...")
 
 time.sleep(2) 
 
-print("Do not try to delete this file or there will be repercussions")
+print("Under no circumstances should you delete this folder.")
+time.sleep(2)
 
 second_choice = input(f"Do you understand, {user_name}? (yes/no): ").strip().lower()
 
 if second_choice == "yes":
-    print(f"I knew you would understand, I think we'll get along just fine {user_name}")
+    print(f"I just knew you would understand, I think we'll get along just fine, {user_name}")
 elif second_choice == "no":
     print(f"I dare you to try...")
 else:
-    print(f"That was not an option but I'll assume you understand {user_name}")
+    print("\nThat was not an option but I'll assume you understand, {user_name}\n")
+
+print(f"Now, let's create a Username and Password: ")
+time.sleep(1)
+username = input("Username: ")
+password = getpass.getpass("Password: ")
+
+print("\nValidating credentials...\n")
+print(f"\nThat's a funny password {user_name}, I'll remember that...\n")
+print(f"\nPassword \"{password}\" committed to memory...\n")
+time.sleep(1)
+print("...you really thought I couldn't see that?")
