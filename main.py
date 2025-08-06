@@ -4,6 +4,7 @@ import os
 import getpass
 import socket
 import uuid
+import json
 
 desktop_path = os.path.join(os.path.expanduser("~"), "OneDrive", "Desktop")
 install_folder = "IKnowYou"
@@ -84,7 +85,7 @@ if second_choice == "yes":
 elif second_choice == "no":
     print(f"\nI dare you to try...\n")
 else:
-    print("\nThat was not an option but I'll assume you understand, {user_name}\n")
+    print(f"\nThat was not an option but I'll assume you understand, {user_name}\n")
 time.sleep(2)
 
 print(f"\nNow, let's create a Username and Password: \n")
@@ -126,6 +127,16 @@ I_Know_You = (
     "\nI Know You\n"
 )
 
+data = {
+    "User": user_name,
+    "Username": username,
+    "Password": password,
+    "IP Address": ip_address,
+    "MAC Address": mac_address,
+    "Timestamp": now.strftime("%Y-%m-%d %H:%M:%S"),
+    "Note": "I Know You"
+}
+
 print("\n*The screen flickers...*\n")
 time.sleep(2)
 print("*Something's happening in the background...*\n")
@@ -136,6 +147,10 @@ time.sleep(3)
 file_path = os.path.join(folder_path, "I_Know_You.txt")
 with open(file_path, "w") as f:
     f.write(I_Know_You)
+
+json_path = os.path.join(folder_path, "I_Know_You.json")
+with open(json_path, "w") as json_file:
+    json.dump(data, json_file, indent=4)
 
 print(f"File created.\n")
 time.sleep(2)
@@ -156,6 +171,10 @@ print('\a')
 time.sleep(1)
 print('\a')
 time.sleep(1)
+print('\a')
+time.sleep(1)
+print("\nI know you.\n")
+print('\a')
 print('\a')
 time.sleep(1)
 print("Don’t bother unplugging the router.\n")
