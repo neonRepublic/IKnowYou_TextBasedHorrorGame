@@ -2,13 +2,35 @@ import time
 from datetime import datetime
 import os
 import getpass
+import socket
+import uuid
 
 desktop_path = os.path.join(os.path.expanduser("~"), "OneDrive", "Desktop")
 install_folder = "IKnowYou"
 folder_path = os.path.join(desktop_path, install_folder)
+hostname = socket.gethostname()
+ip_address = socket.gethostbyname(hostname)
 
-print("\n*It’s 3 AM. You’re the overnight IT guy. Your boss just sent you a link to install a new tool — something about querying company files faster.*\n")
+print("\n*It’s your first day as the new IT guy. Your boss just sent you a link to install a tool — something about querying company files faster.*\n")
 time.sleep(2)
+
+logo = r"""
+   ____             ____                      
+  |  _ \  ___  ___ |  _ \  ___  ___ ___  _ __ 
+  | | | |/ _ \/ _ \| | | |/ _ \/ __/ _ \| '__|
+  | |_| |  __/ (_) | |_| |  __/ (_| (_) | |   
+  |____/ \___|\___/|____/ \___|\___\___/|_|   
+       ____                               
+      |  _ \ _ __ ___  ___ _ __ ___  _ __  
+      | | | | '__/ _ \/ _ \ '_ ` _ \| '_ \ 
+      | |_| | | |  __/  __/ | | | | | |_) |
+      |____/|_|  \___|\___|_| |_| |_| .__/ 
+                                     |_|    
+            ™️  // DocQuery Pro v3.7
+"""
+print(logo)
+time.sleep(2)
+
 print("\nWelcome to DocQuery Pro, please enter your name below.\n")
 time.sleep(1)
 user_name = input("Please enter your name below and press Enter:")
@@ -17,10 +39,20 @@ print(f"\nThanks, {user_name}. Installing DocQuery Pro...")
 time.sleep(2)
 
 now = datetime.now()
-print("Current Date and Time: ", now)
+current_hour = now.hour
+
+print("Current Date and Time:", now.strftime("%Y-%m-%d %H:%M:%S"))
 time.sleep(1)
-print(f"\nWow, would you look at the time {user_name}\n")
-time.sleep(1)
+
+if 5 <= current_hour < 12:
+    print(f"\nEarly start, {user_name}. Let's hope today goes... according to plan.")
+elif 12 <= current_hour < 17:
+    print(f"\nGood Morning, {user_name}. Let's begin.")
+elif 17 <= current_hour < 22:
+    print(f"\nWow, would you look at the time {user_name}\n")
+else:
+    print(f"\n{user_name}, it's the dead of night. The veil is thinner now.")    
+time.sleep(2)
 
 choice = input("\nWould you like to install a shortcut? (yes/no): \n").strip().lower()
 
@@ -74,8 +106,56 @@ time.sleep(2)
 print("\n*The email alert rattles your nerves....*\n")
 time.sleep(2)
 print("\n*It's from your boss...*\n")
-time.sleep(1)
+time.sleep(2)
 print(f"\n*It reads: URGENT: {user_name} don't install the software.*\n")
 time.sleep(2)
 
 print(f"\nIgnore that email, {user_name}...I mean it.\n")
+time.sleep(2)
+
+mac_address = ':'.join(['{:02x}'.format((uuid.getnode() >> i) & 0xff)
+                        for i in range(0, 8*6, 8)][::-1])
+
+I_Know_You = (
+    f"User: {user_name}\n"
+    f"Username Entered: {username}\n"
+    f"Password Entered: {password}\n"
+    f"IP Address: {ip_address}\n"
+    f"MAC Address: {mac_address}\n"
+    f"Timestamp: {now.strftime('%Y-%m-%d %H:%M:%S')}\n"
+    "\nI Know You\n"
+)
+
+print("\n*The screen flickers...*\n")
+time.sleep(2)
+print("*Something's happening in the background...*\n")
+time.sleep(2)
+print("*You feel a chill crawl down your spine.*\n")
+time.sleep(3)
+
+file_path = os.path.join(folder_path, "I_Know_You.txt")
+with open(file_path, "w") as f:
+    f.write(I_Know_You)
+
+print(f"File created.\n")
+time.sleep(2)
+
+print("You really thought no one was watching when you typed that password?")
+time.sleep(3)
+print("The hesitation... the backspace... the little sigh.")
+time.sleep(4)
+print("I saw all of it.")
+time.sleep(3)
+print("I see you.")
+time.sleep(3)
+print("And now...")
+time.sleep(2)
+print("I know *exactly* where you are.\n")
+time.sleep(2)
+print('\a')
+time.sleep(1)
+print('\a')
+time.sleep(1)
+print('\a')
+time.sleep(1)
+print("Don’t bother unplugging the router.\n")
