@@ -16,17 +16,18 @@ print("\n*It’s your first day as the new IT guy. Your boss just sent you a lin
 time.sleep(2)
 
 logo = r"""
-   ____             ____                      
-  |  _ \  ___  ___ |  _ \  ___  ___ ___  _ __ 
-  | | | |/ _ \/ _ \| | | |/ _ \/ __/ _ \| '__|
-  | |_| |  __/ (_) | |_| |  __/ (_| (_) | |   
-  |____/ \___|\___/|____/ \___|\___\___/|_|   
-       ____                               
-      |  _ \ _ __ ___  ___ _ __ ___  _ __  
-      | | | | '__/ _ \/ _ \ '_ ` _ \| '_ \ 
-      | |_| | | |  __/  __/ | | | | | |_) |
-      |____/|_|  \___|\___|_| |_| |_| .__/ 
-                                     |_|    
+  _____              ____                         
+ |  __ \            / __ \                        
+ | |  | | ___   ___| |  | |_   _  ___ _ __ _   _  
+ | |  | |/ _ \ / __| |  | | | | |/ _ \ '__| | | | 
+ | |__| | (_) | (__| |__| | |_| |  __/ |  | |_| | 
+ |_____/_\___/ \___|\___\_\\__,_|\___|_|   \__, | 
+   |  __ \                                  __/ | 
+   | |__) | __ ___                         |___/  
+   |  ___/ '__/ _ \                               
+   | |   | | | (_) |                              
+   |_|   |_|  \___/      
+                                  
             ™️  // DocQuery Pro v3.7
 """
 print(logo)
@@ -108,7 +109,7 @@ print("\n*The email alert rattles your nerves....*\n")
 time.sleep(2)
 print("\n*It's from your boss...*\n")
 time.sleep(2)
-print(f"\n*It reads: URGENT: {user_name} don't install the software.*\n")
+print(f"\n*It reads: URGENT: {user_name} don't install the software! There's something wrong with it!*\n")
 time.sleep(2)
 
 print(f"\nIgnore that email, {user_name}...I mean it.\n")
@@ -166,15 +167,32 @@ time.sleep(3)
 print("And now...")
 time.sleep(2)
 print("I know *exactly* where you are.\n")
+print('\a')
+print('\a')
+print('\a')
+print('\a')
 time.sleep(2)
-print('\a')
-time.sleep(1)
-print('\a')
-time.sleep(1)
-print('\a')
-time.sleep(1)
-print("\nI know you.\n")
-print('\a')
-print('\a')
-time.sleep(1)
 print("Don’t bother unplugging the router.\n")
+time.sleep(2)
+
+i_know_you_logo = r"""
+
+d888888b      db   dD d8b   db  .d88b.  db   d8b   db 
+  `88'        88 ,8P' 888o  88 .8P  Y8. 88   I8I   88 
+   88         88,8P   88V8o 88 88    88 88   I8I   88 
+   88         88`8b   88 V8o88 88    88 Y8   I8I   88 
+  .88.        88 `88. 88  V888 `8b  d8' `8b d8'8b d8' 
+Y888888P      YP   YD VP   V8P  `Y88P'   `8b8' `8d8'  
+                                                      
+                                                      
+          db    db  .d88b.  db    db                  
+          `8b  d8' .8P  Y8. 88    88                  
+           `8bd8'  88    88 88    88                  
+             88    88    88 88    88                  
+             88    `8b  d8' 88b  d88                  
+             YP     `Y88P'  ~Y8888P'                  
+
+"""
+
+print(i_know_you_logo)
+time.sleep(3)
